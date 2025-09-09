@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import leftArrow from '../../public/arrow.svg';
-import starIcon from '../../public/star.svg'; 
+import starIcon from '../../public/star.svg';
 
 const hilmarLight = localFont({ src: '../../public/fonts/Hilmar-Light.otf' });
 
@@ -20,7 +20,17 @@ const poppins = Poppins({
 const HeroSection = () => {
   return (
     <div className="bg-gradient-to-br from-[#dcf1f7] via-[#e8f6fa] to-white min-h-screen flex relative overflow-hidden">
-      
+      <a href="mailto:anamikaagg07@gmail.com">
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="hidden sm:flex absolute top-10 right-14 z-30 items-center gap-2 px-4 py-2 text-black font-semibold rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200 hover:bg-white transition-colors"
+        >
+          Contact Me
+        </motion.button>
+      </a>
+
       <main className="relative flex flex-col items-center text-center px-4 py-10 max-w-7xl mx-auto">
 
         {/* Badge with Star Icon */}
@@ -53,11 +63,11 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.9 }}
             className="absolute left-[calc(100px)] md:left-[calc(200px)] lg:left-[calc(50px)] bottom-9 -translate-y-1/2 z-20 w-16 h-16 md:w-20 md:h-20"
           >
-            <Image 
-              src={leftArrow} 
-              alt="Arrow" 
-              layout="fill" 
-              objectFit="contain" 
+            <Image
+              src={leftArrow}
+              alt="Arrow"
+              layout="fill"
+              objectFit="contain"
             />
           </motion.div>
 
@@ -102,14 +112,14 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 1.0 }} 
+            transition={{ duration: 0.5, delay: 1.0 }}
             className="absolute right-[calc(100px)] md:right-[calc(200px)] lg:right-[calc(50px)] bottom-9 -translate-y-1/2 z-20 w-16 h-16 md:w-20 md:h-20 "
           >
-            <Image 
-              src={leftArrow} 
-              alt="Arrow" 
-              layout="fill" 
-              objectFit="contain" 
+            <Image
+              src={leftArrow}
+              alt="Arrow"
+              layout="fill"
+              objectFit="contain"
             />
           </motion.div>
 
