@@ -2,66 +2,38 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowRight } from 'lucide-react';
 import localFont from 'next/font/local';
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import leftArrow from '../../public/arrow.svg';
+import starIcon from '../../public/star.svg'; 
 
-const hilmarBold = localFont({ src: '../../public/fonts/Hilmar-Bold.otf' });
-const hilmarRegular = localFont({ src: '../../public/fonts/Hilmar-Regular.otf' });
-const hilmarMedium = localFont({ src: '../../public/fonts/Hilmar-Medium.otf' });
-// thin, light
-const hilmarThin = localFont({ src: '../../public/fonts/Hilmar-Thin.otf' });
 const hilmarLight = localFont({ src: '../../public/fonts/Hilmar-Light.otf' });
-
-// import udon soup font
-const udonSoup = localFont({ src: '../../public/fonts/DK-Udon-Soup.otf' });
 
 const playbusBaysGt = localFont({ src: '../../public/fonts/PlaybusBaysGt.otf' });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700"], // include weights you want
+  weight: ["400", "600", "700"],
 });
 
 const HeroSection = () => {
   return (
     <div className="bg-gradient-to-br from-[#dcf1f7] via-[#e8f6fa] to-white min-h-screen flex relative overflow-hidden">
-    
-    {/* Alternative Options - Replace the div above with any of these:
-    
-    // Option 2: Blue to Light Peach (Complements your orange accent)
-    <div className="bg-gradient-to-br from-[#dcf1f7] via-[#e8f6fa] to-[#fef7f0] min-h-screen flex relative overflow-hidden">
-    
-    // Option 3: Radial gradient from center
-    <div className="bg-[radial-gradient(ellipse_at_center,_#dcf1f7_0%,_#f0f9fc_50%,_#ffffff_100%)] min-h-screen flex relative overflow-hidden">
-    
-    // Option 4: Diagonal soft gradient
-    <div className="bg-gradient-to-tr from-[#dcf1f7] to-[#f8fcfd] min-h-screen flex relative overflow-hidden">
-    
-    // Option 5: Three-color subtle blend
-    <div className="bg-gradient-to-br from-[#dcf1f7] via-[#ffffff] to-[#f5f9fb] min-h-screen flex relative overflow-hidden">
-    
-    // Option 6: Mesh gradient effect (more modern)
-    <div className="bg-[conic-gradient(at_top_right,_#dcf1f7_0%,_#ffffff_25%,_#e8f6fa_50%,_#ffffff_75%,_#dcf1f7_100%)] min-h-screen flex relative overflow-hidden">
-    
-    */}
-    
-      {/* Main Hero Content */}
+      
       <main className="relative flex flex-col items-center text-center px-4 py-10 max-w-7xl mx-auto">
 
-        {/* Badge */}
+        {/* Badge with Star Icon */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-8 flex items-center gap-2 px-4 py-2 text-black font-semibold rounded-xl bg-[#f9dace] transition-colors transform"
         >
+          <Image src={starIcon} alt="Star" width={18} height={18} />
           <span>Soon on Play Store</span>
         </motion.div>
 
-        {/* Main Content Container */}
         <div className="relative flex items-center justify-center w-full">
 
           {/* Left Image - Welcome Screen */}
@@ -74,9 +46,23 @@ const HeroSection = () => {
             <img src="/detoxie/welcome.jpg" alt="Welcome Screen" className="w-full h-full object-cover rounded-3xl" />
           </motion.div>
 
+          {/* Arrow Image between Left and Center */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="absolute left-[calc(100px)] md:left-[calc(200px)] lg:left-[calc(50px)] bottom-9 -translate-y-1/2 z-20 w-16 h-16 md:w-20 md:h-20"
+          >
+            <Image 
+              src={leftArrow} 
+              alt="Arrow" 
+              layout="fill" 
+              objectFit="contain" 
+            />
+          </motion.div>
+
           {/* Center Content */}
           <div className="relative z-20 flex flex-col items-center">
-            {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +78,6 @@ const HeroSection = () => {
               </span>
             </motion.h1>
 
-            {/* Subheading */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -112,6 +97,21 @@ const HeroSection = () => {
               <img src="/detoxie/permission-edited.jpg" alt="Home Screen" className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
           </div>
+
+          {/* Arrow Image between Center and Right */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.0 }} 
+            className="absolute right-[calc(100px)] md:right-[calc(200px)] lg:right-[calc(50px)] bottom-9 -translate-y-1/2 z-20 w-16 h-16 md:w-20 md:h-20 "
+          >
+            <Image 
+              src={leftArrow} 
+              alt="Arrow" 
+              layout="fill" 
+              objectFit="contain" 
+            />
+          </motion.div>
 
           {/* Right Image - Home Screen */}
           <motion.div
