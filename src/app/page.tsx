@@ -1,103 +1,135 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Play, ArrowRight } from 'lucide-react';
+import localFont from 'next/font/local';
+import { Poppins } from 'next/font/google';
+
+const hilmarBold = localFont({ src: '../../public/fonts/Hilmar-Bold.otf' });
+const hilmarRegular = localFont({ src: '../../public/fonts/Hilmar-Regular.otf' });
+const hilmarMedium = localFont({ src: '../../public/fonts/Hilmar-Medium.otf' });
+// thin, light
+const hilmarThin = localFont({ src: '../../public/fonts/Hilmar-Thin.otf' });
+const hilmarLight = localFont({ src: '../../public/fonts/Hilmar-Light.otf' });
+
+// import udon soup font
+const udonSoup = localFont({ src: '../../public/fonts/DK-Udon-Soup.otf' });
+
+const playbusBaysGt = localFont({ src: '../../public/fonts/PlaybusBaysGt.otf' });
+
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // include weights you want
+});
+
+
+const HeroSection = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-[#FDFCFB] min-h-screen">
+    
+      <div className="">
+        {/* Header Navigation */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Main Hero Content */}
+        <main className="relative flex flex-col items-center text-center px-4 pt-16 pb-20 md:pt-8 md:pb-32">
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-8 mb-4 flex flex-col sm:flex-row items-center gap-4"
+        >
+          <div className="flex items-center gap-2 px-4 py-2 text-black font-semibold rounded-xl bg-[#f5c5b3] transition-colors transform">
+            <span>Soon on Play Store</span>
+          </div>
+
+        </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className={`relative text-5xl md:text-7xl text-gray-900 max-w-4xl leading-tight ${hilmarLight.className}`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <span className="absolute top-0 -left-8 md:-left-16 text-3xl font-serif text-gray-400 transform -rotate-12">
+              ✨
+            </span>
+            Stop Mindless Scrolling, <br />
+            reclaim your{" "}
+            <span
+              className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-3 `}
+            >
+              FOCUS
+            </span>
+
+            <span className="absolute bottom-0 -right-8 md:-right-16 text-3xl font-serif text-gray-400 transform rotate-12">🧘</span>
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className={`${poppins.className} mt-4 mb-10 max-w-xl text-gray-700 leading-relaxed`}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            Combat Instagram Reels addiction with timers, to-do list overlays, and your personal vision photos to motivate you to work instead of scroll.
+          </motion.p>
+
+
+          {/* Action Buttons */}
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-10 flex flex-col sm:flex-row items-center gap-4"
+          >
+            <button className="flex items-center gap-2 px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-gray-800 transition-colors transform hover:-translate-y-0.5">
+              <Play size={16} className="fill-white" />
+              <span>Join waiting list</span>
+            </button>
+          </motion.div> */}
+
+        </main>
+      </div>
+
+      {/* Bottom Illustration Cards */}
+      <div className="relative w-full mt-[-80px] md:mt-[-120px]">
+        {/* Left image - behind main */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="absolute left-[10%] md:left-[20%] top-8 w-48 md:w-64 h-auto bg-blue-300 rounded-3xl shadow-xl z-0"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <img src="/detoxie/permission.jpg" alt="Welcome Screen Illustration" className="w-full h-full object-cover rounded-3xl" />
+        </motion.div>
+        
+        {/* Right image - behind main */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.9 }}
+          className="absolute right-[10%] md:right-[20%] top-8 w-48 md:w-64 h-auto bg-yellow-300 rounded-3xl shadow-xl z-0"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <img src="/detoxie/home.jpg" alt="Settings Screen Illustration" className="w-full h-full object-cover rounded-3xl" />
+        </motion.div>
+        
+        {/* Main image - centered and in front */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="absolute z-10 left-1/2 -translate-x-1/2 top-0 w-52 md:w-72 h-auto bg-pink-300 rounded-3xl shadow-2xl"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <img src="/detoxie/welcome.jpg" alt="Home Screen Illustration" className="w-full h-full object-cover rounded-3xl" />
+        </motion.div>
+      </div>
     </div>
   );
-}
+};
+
+export default HeroSection;
