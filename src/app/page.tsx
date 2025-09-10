@@ -20,6 +20,11 @@ const poppins = Poppins({
 const HeroSection = () => {
   return (
     <div className="bg-gradient-to-br from-[#dcf1f7] via-[#e8f6fa] to-white min-h-screen flex relative overflow-hidden">
+
+      <div
+        className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(rgba(0,0,0,0.08)_1px,transparent_1px)] [background-size:24px_24px]"
+      ></div>
+
       <a href="mailto:anamikaagg07@gmail.com">
         <motion.button
           initial={{ opacity: 0, y: -20 }}
