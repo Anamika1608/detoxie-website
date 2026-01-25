@@ -39,15 +39,18 @@ const HeroSection = () => {
       <main className="relative flex flex-col items-center text-center px-4 py-10 max-w-7xl mx-auto">
 
         {/* Badge with Star Icon */}
-        <motion.div
+        <motion.a
+          href="https://play.google.com/store/apps/details?id=com.detoxie"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-8 flex items-center gap-2 px-4 py-2 text-black font-semibold rounded-xl bg-[#f9dace] transition-colors transform"
+          className="mb-8 flex items-center gap-2 px-4 py-2 text-black font-semibold rounded-xl bg-[#f9dace] transition-colors transform hover:bg-[#f5c9b8] cursor-pointer"
         >
           <Image src={starIcon} alt="Star" width={18} height={18} />
-          <span>Soon on Play Store</span>
-        </motion.div>
+          <span>Download on Play Store</span>
+        </motion.a>
 
         {/* Desktop and Medium Layout */}
         <div className="relative hidden lg:flex items-center justify-between w-full min-h-[600px] max-w-[1400px] mx-auto px-4">
