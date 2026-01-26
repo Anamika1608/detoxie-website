@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { hilmarLight, playbusBaysGt, poppins } from '@/lib/fonts';
 
 // Features Data
@@ -94,9 +95,11 @@ const FeatureItemWrapper = ({
       <div className="relative flex-shrink-0">
         <div className="absolute -inset-4 bg-gradient-to-br from-[#f9dace]/40 to-[#dcf1f7]/40 rounded-[2.5rem] blur-2xl"></div>
         <div className="relative w-52 md:w-72 lg:w-80 rounded-3xl shadow-2xl overflow-hidden">
-          <img
+          <Image
             src={feature.imageSrc}
             alt={feature.imageAlt}
+            width={320}
+            height={640}
             className="w-full h-full object-cover rounded-3xl"
           />
         </div>

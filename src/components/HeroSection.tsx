@@ -53,7 +53,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.6 }}
               className="w-48 lg:w-52 xl:w-56 h-auto mt-20 bg-blue-300 rounded-3xl shadow-xl z-10"
             >
-              <img src="/detoxie/welcome.jpg" alt="Welcome Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/welcome.jpg" alt="Welcome Screen" width={224} height={480} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
 
             {/* Arrow Image between Left and Center */}
@@ -105,7 +105,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-8 mb-8 w-48 lg:w-52 xl:w-56 rounded-2xl flex items-center justify-center shadow-xl z-10"
             >
-              <img src="/detoxie/permission-edited.jpg" alt="Home Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/permission-edited.jpg" alt="Home Screen" width={224} height={480} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
           </div>
 
@@ -132,7 +132,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.7 }}
               className="w-48 lg:w-52 xl:w-56 h-auto mt-20 bg-yellow-300 rounded-3xl shadow-xl z-10"
             >
-              <img src="/detoxie/home.jpg" alt="Home Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/home.jpg" alt="Home Screen" width={224} height={480} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
           </div>
         </div>
@@ -174,7 +174,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.6 }}
               className="w-40 h-auto bg-blue-300 rounded-3xl shadow-xl"
             >
-              <img src="/detoxie/welcome.jpg" alt="Welcome Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/welcome.jpg" alt="Welcome Screen" width={160} height={320} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
 
             <motion.div
@@ -183,7 +183,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="w-40 rounded-2xl flex items-center justify-center shadow-xl"
             >
-              <img src="/detoxie/permission-edited.jpg" alt="Permission Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/permission-edited.jpg" alt="Permission Screen" width={160} height={320} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
 
 
@@ -193,7 +193,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.7 }}
               className="w-40 h-auto bg-yellow-300 rounded-3xl shadow-xl"
             >
-              <img src="/detoxie/home.jpg" alt="Home Screen" className="w-full h-full object-cover rounded-3xl" />
+              <Image src="/detoxie/home.jpg" alt="Home Screen" width={160} height={320} className="w-full h-full object-cover rounded-3xl" />
             </motion.div>
           </div>
         </div>
@@ -234,7 +234,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="w-48 h-auto bg-blue-300 rounded-3xl shadow-xl"
           >
-            <img src="/detoxie/welcome.jpg" alt="Welcome Screen" className="w-full h-full object-cover rounded-3xl" />
+            <Image src="/detoxie/welcome.jpg" alt="Welcome Screen" width={192} height={384} className="w-full h-full object-cover rounded-3xl" />
           </motion.div>
 
           <motion.div
@@ -243,7 +243,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="w-48 rounded-2xl flex items-center justify-center shadow-xl"
           >
-            <img src="/detoxie/permission-edited.jpg" alt="Permission Screen" className="w-full h-full object-cover rounded-3xl" />
+            <Image src="/detoxie/permission-edited.jpg" alt="Permission Screen" width={192} height={384} className="w-full h-full object-cover rounded-3xl" />
           </motion.div>
 
           <motion.div
@@ -252,7 +252,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.7 }}
             className="w-48 h-auto bg-yellow-300 rounded-3xl shadow-xl"
           >
-            <img src="/detoxie/home.jpg" alt="Home Screen" className="w-full h-full object-cover rounded-3xl" />
+            <Image src="/detoxie/home.jpg" alt="Home Screen" width={192} height={384} className="w-full h-full object-cover rounded-3xl" />
           </motion.div>
         </div>
 

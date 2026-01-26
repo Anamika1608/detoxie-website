@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { hilmarLight, playbusBaysGt, poppins } from '@/lib/fonts';
 
 const CTABanner = () => {
@@ -29,9 +30,11 @@ const CTABanner = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex-shrink-0"
             >
-              <img
+              <Image
                 src="/illustrations/download-cta.png"
                 alt="Download Detoxie"
+                width={256}
+                height={256}
                 className="w-48 md:w-56 lg:w-64 drop-shadow-2xl"
               />
             </motion.div>
@@ -41,12 +44,12 @@ const CTABanner = () => {
               <h2 className={`text-2xl md:text-3xl lg:text-4xl text-white leading-tight ${hilmarLight.className} mb-3`}>
                 Every scroll is time you{" "}
                 <span className={`${playbusBaysGt.className} text-white/90 inline-block transform -rotate-2`}>
-                  WON'T GET BACK
+                  WON&apos;T GET BACK
                 </span>
               </h2>
 
               <p className={`${poppins.className} text-white/80 text-sm lg:text-base mb-6 max-w-md mx-auto lg:mx-0`}>
-                Your goals aren't waiting. <br /> Take control of your screen time today.
+                Your goals aren&apos;t waiting. <br /> Take control of your screen time today.
               </p>
 
               <motion.a
@@ -57,10 +60,13 @@ const CTABanner = () => {
                 whileTap={{ scale: 0.98 }}
                 className="inline-block"
               >
-                <img
+                <Image
                   src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                   alt="Get it on Google Play"
-                  className="h-14 md:h-16"
+                  width={200}
+                  height={80}
+                  className="h-14 md:h-16 w-auto"
+                  unoptimized
                 />
               </motion.a>
             </div>
