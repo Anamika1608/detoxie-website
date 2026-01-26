@@ -129,41 +129,93 @@ const FeaturesSection = () => {
   });
 
   return (
-    <div ref={containerRef} className="relative h-[160vh] md:h-[220vh] lg:h-[250vh] bg-gradient-to-b from-[#e8f6fa] via-[#f0f9fb] to-[#dcf1f7]">
-      {/* Sticky Container */}
-      <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:24px_24px]"></div>
-
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative text-center pt-6 md:pt-12 lg:pt-10 px-6 pb-2 md:pb-4"
-        >
-          <h2 className={`text-2xl md:text-3xl lg:text-4xl text-gray-900 ${hilmarLight.className} mb-2`}>
+    <>
+      {/* Simple stacked layout for mobile (no scroll-based image changes) */}
+      <div className="md:hidden bg-gradient-to-b from-[#e8f6fa] via-[#f0f9fb] to-[#dcf1f7] py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className={`text-2xl text-center text-gray-900 ${hilmarLight.className} mb-6`}>
             Here&apos;s how it{" "}
             <span className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-2`}>
               WORKS
             </span>
           </h2>
-        </motion.div>
 
-        {/* Feature Display Area */}
-        <div className="relative flex-1 max-w-6xl mx-auto w-full">
-          {features.map((feature, index) => (
-            <FeatureItemWrapper
-              key={index}
-              index={index}
-              feature={feature}
-              scrollProgress={scrollYProgress}
-            />
-          ))}
+          <div className="space-y-10">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-4"
+              >
+                <div className="relative flex-shrink-0">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-[#f9dace]/40 to-[#dcf1f7]/40 rounded-[2.5rem] blur-2xl"></div>
+                  <div className="relative w-52 rounded-3xl shadow-2xl overflow-hidden">
+                    <Image
+                      src={feature.imageSrc}
+                      alt={feature.imageAlt}
+                      width={320}
+                      height={640}
+                      className="w-full h-full object-cover rounded-3xl"
+                    />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <h3 className={`text-xl text-gray-900 leading-tight ${hilmarLight.className} mb-2`}>
+                    {feature.title}{" "}
+                    <span className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-2`}>
+                      {feature.highlightWord}
+                    </span>
+                  </h3>
+                  <p className={`${poppins.className} text-gray-700 leading-relaxed text-base`}>
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Scroll-based sticky experience for tablet & desktop */}
+      <div
+        ref={containerRef}
+        className="hidden md:block relative md:h-[220vh] lg:h-[250vh] bg-gradient-to-b from-[#e8f6fa] via-[#f0f9fb] to-[#dcf1f7]"
+      >
+        {/* Sticky Container */}
+        <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative text-center pt-12 lg:pt-10 px-6 pb-4"
+          >
+            <h2 className={`text-3xl lg:text-4xl text-gray-900 ${hilmarLight.className} mb-2`}>
+              Here&apos;s how it{" "}
+              <span className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-2`}>
+                WORKS
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* Feature Display Area */}
+          <div className="relative flex-1 max-w-6xl mx-auto w-full">
+            {features.map((feature, index) => (
+              <FeatureItemWrapper
+                key={index}
+                index={index}
+                feature={feature}
+                scrollProgress={scrollYProgress}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
