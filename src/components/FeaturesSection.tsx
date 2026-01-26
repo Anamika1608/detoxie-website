@@ -141,7 +141,7 @@ const FeaturesSection = () => {
           className="relative text-center pt-12 lg:pt-10 px-6 pb-4"
         >
           <h2 className={`text-2xl md:text-3xl lg:text-4xl text-gray-900 ${hilmarLight.className} mb-2`}>
-            Here's how it{" "}
+            Here&apos;s how it{" "}
             <span className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-2`}>
               WORKS
             </span>

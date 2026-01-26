@@ -42,12 +42,12 @@ const CTABanner = () => {
               <h2 className={`text-2xl md:text-3xl lg:text-4xl text-white leading-tight ${hilmarLight.className} mb-3`}>
                 Every scroll is time you{" "}
                 <span className={`${playbusBaysGt.className} text-white/90 inline-block transform -rotate-2`}>
-                  WON'T GET BACK
+                  WON&apos;T GET BACK
                 </span>
               </h2>
 
               <p className={`${poppins.className} text-white/80 text-sm lg:text-base mb-6 max-w-md mx-auto lg:mx-0`}>
-                Your goals aren't waiting. <br /> Take control of your screen time today.
+                Your goals aren&apos;t waiting. <br /> Take control of your screen time today.
               </p>
 
               <motion.a
