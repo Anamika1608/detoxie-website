@@ -5,7 +5,7 @@ import { hilmarLight, playbusBaysGt, poppins } from '@/lib/fonts';
 
 const CTABanner = () => {
   return (
-    <section className="pt-4 pb-12 lg:pt-6 lg:pb-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#dcf1f8] to-[#e8f6fa]">
+    <section className="pt-8 pb-12 md:pt-6 lg:pt-6 lg:pb-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#dcf1f8] to-[#e8f6fa]">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,8 +20,7 @@ const CTABanner = () => {
         <div className="absolute bottom-10 right-48 w-16 h-16 bg-white/10 rounded-full"></div>
 
         <div className="relative px-8 py-12 lg:px-16 lg:py-16">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
             {/* Illustration */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -37,17 +36,17 @@ const CTABanner = () => {
               />
             </motion.div>
 
-            {/* Content */}
+            {/* Content – text + button */}
             <div className="flex-1 text-center lg:text-left">
               <h2 className={`text-2xl md:text-3xl lg:text-4xl text-white leading-tight ${hilmarLight.className} mb-3`}>
                 Every scroll is time you{" "}
                 <span className={`${playbusBaysGt.className} text-white/90 inline-block transform -rotate-2`}>
-                  WON&apos;T GET BACK
+                  WON'T GET BACK
                 </span>
               </h2>
 
               <p className={`${poppins.className} text-white/80 text-sm lg:text-base mb-6 max-w-md mx-auto lg:mx-0`}>
-                Your goals aren&apos;t waiting. <br /> Take control of your screen time today.
+                Your goals aren't waiting. <br /> Take control of your screen time today.
               </p>
 
               <motion.a

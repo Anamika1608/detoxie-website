@@ -88,12 +88,12 @@ const FeatureItemWrapper = ({
   return (
     <motion.div
       style={{ opacity, y, scale }}
-      className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-12 md:gap-14 lg:gap-24 px-8 lg:px-16"
+      className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-14 lg:gap-24 px-6 lg:px-16"
     >
       {/* Image Side */}
-      <div className="relative flex-shrink-0 pt-8 md:pt-0">
+      <div className="relative flex-shrink-0">
         <div className="absolute -inset-4 bg-gradient-to-br from-[#f9dace]/40 to-[#dcf1f7]/40 rounded-[2.5rem] blur-2xl"></div>
-        <div className="relative w-60 md:w-72 lg:w-80 rounded-3xl shadow-2xl overflow-hidden">
+        <div className="relative w-52 md:w-72 lg:w-80 rounded-3xl shadow-2xl overflow-hidden">
           <img
             src={feature.imageSrc}
             alt={feature.imageAlt}
@@ -103,14 +103,14 @@ const FeatureItemWrapper = ({
       </div>
 
       {/* Content Side */}
-      <div className="flex-1 max-w-xl text-center lg:text-left pt-4 md:pt-0 lg:pl-6">
-        <h3 className={`text-2xl md:text-3xl lg:text-5xl text-gray-900 leading-tight ${hilmarLight.className} mb-4`}>
+      <div className="flex-1 max-w-xl text-center lg:text-left lg:pl-6">
+        <h3 className={`text-xl md:text-3xl lg:text-5xl text-gray-900 leading-tight ${hilmarLight.className} mb-2 lg:mb-4`}>
           {feature.title}{" "}
           <span className={`${playbusBaysGt.className} text-[#E46533] inline-block transform -rotate-2`}>
             {feature.highlightWord}
           </span>
         </h3>
-        <p className={`${poppins.className} text-gray-700 leading-relaxed text-base lg:text-lg`}>
+        <p className={`${poppins.className} text-gray-700 leading-relaxed text-base lg:text-lg hidden md:block`}>
           {feature.description}
         </p>
       </div>
@@ -126,7 +126,7 @@ const FeaturesSection = () => {
   });
 
   return (
-    <div ref={containerRef} className="relative h-[180vh] md:h-[220vh] lg:h-[250vh] bg-gradient-to-b from-[#e8f6fa] via-[#f0f9fb] to-[#dcf1f7]">
+    <div ref={containerRef} className="relative h-[160vh] md:h-[220vh] lg:h-[250vh] bg-gradient-to-b from-[#e8f6fa] via-[#f0f9fb] to-[#dcf1f7]">
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
         {/* Background Pattern */}
@@ -138,7 +138,7 @@ const FeaturesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative text-center pt-12 lg:pt-10 px-6 pb-4"
+          className="relative text-center pt-6 md:pt-12 lg:pt-10 px-6 pb-2 md:pb-4"
         >
           <h2 className={`text-2xl md:text-3xl lg:text-4xl text-gray-900 ${hilmarLight.className} mb-2`}>
             Here&apos;s how it{" "}
