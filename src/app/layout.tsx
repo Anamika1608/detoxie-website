@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Detoxie - Break Instagram Reels Addiction | Screen Time Control App",
+    default: "Detoxie - Break Instagram Reels Addiction",
     template: "%s | Detoxie"
   },
   description: "Stop mindless scrolling on Instagram Reels. Detoxie helps you overcome social media addiction with smart timers, to-do list overlays, and focus reminders. Take back control of your screen time and reclaim your focus.",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://detoxie.vercel.app",
     siteName: "Detoxie",
-    title: "Detoxie - Break Instagram Reels Addiction | Screen Time Control",
+    title: "Detoxie - Break Instagram Reels Addiction",
     description: "Stop mindless scrolling on Instagram Reels. Smart timers, to-do overlays, and focus reminders to help you overcome social media addiction and reclaim your productivity.",
     images: [
       {
